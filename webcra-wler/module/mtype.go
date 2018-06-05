@@ -44,9 +44,46 @@ func CheckType(moduleType Type,module Module) bool {
 		if _,ok := module.(Pipeline); ok {
 			return true
 		}
-		
 	}
+	return false
 }
+
+//判断组件头是否合法
+func LegalType(moduleType Type) bool {
+	if _,ok:= legalTypeLetterMap[moduleType]; ok {
+		return true
+	}
+	return false
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
