@@ -1,6 +1,7 @@
 package module
 
 
+
 //type代表组件的类型
 type Type string
 
@@ -55,6 +56,19 @@ func LegalType(moduleType Type) bool {
 	}
 	return false
 }
+
+//GetType 获取到组件的头部
+//若给定的ID不合法 则返回false
+func GetType(mid MID) (bool,Type) {
+	parts,err := SplitMID(mid)
+	if err != nil {
+		return false,""
+	}
+	mt,ok := legalLetterTypeMap[parts[0]]
+	return ok,mt
+}
+
+
 
 
 
