@@ -50,8 +50,14 @@ type Downloader interface {
 //并发安全
 type Analyzer interface {
 	Module
-	RespPrsers()
+	//会返回一个函数的列表
+	RespPrsers() []ParseResponse
+	//分析组件的实现函数
+	Analyze(resq *Response) ([]Data,[]error)
 }
+
+
+
 
 
 
